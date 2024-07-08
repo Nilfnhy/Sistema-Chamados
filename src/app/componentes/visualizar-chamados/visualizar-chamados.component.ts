@@ -31,18 +31,19 @@ export class VisualizarChamadosComponent implements OnInit {
     });
   }
 
-
   addChamado()
   {
     this.chamadoService.addChamado("Chamado " + this.i);
     this.i ++;
   }
 
+  //Abrir interface de "Novo Chamado"
   openModal()
   {
     $('#add-chamado').modal('show');
   }
 
+  //Fechar interface de "Novo Chamado"
   closeModal()
   {
     $('#add-chamado').modal('hide');
@@ -51,6 +52,7 @@ export class VisualizarChamadosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Salvar o chamado informado
   salvarFormChamado()
   {
     if(this.form.valid)
@@ -65,6 +67,7 @@ export class VisualizarChamadosComponent implements OnInit {
     }
   }
 
+  //Verificar se a informação passada na caixa de texto se encontra nos parâmetros
   isCampoValido(inputNome: string) : boolean
   {
     const campo: any = this.form.get(inputNome);
